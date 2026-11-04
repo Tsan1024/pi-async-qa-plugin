@@ -1,0 +1,54 @@
+{
+  "name": "pi-async-qa-plugin",
+  "version": "0.2.0",
+  "description": "A Pi plugin for side-by-side question answering while the main agent is busy",
+  "type": "module",
+  "license": "MIT",
+  "author": "Tsan1024",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tsan1024/pi-async-qa-plugin.git"
+  },
+  "homepage": "https://github.com/Tsan1024/pi-async-qa-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/Tsan1024/pi-async-qa-plugin/issues"
+  },
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "async",
+    "agent"
+  ],
+  "files": [
+    "src",
+    "docs",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-ai": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.5.0",
+    "@earendil-works/pi-ai": "1.5.0",
+    "typebox": "1.3.27",
+    "@types/node": "22.19.19",
+    "typescript": "7.0.2"
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/runtime.test.ts test/executor.test.ts test/model-request.test.ts",
+    "test:smoke": "python3 test/smoke.py"
+  }
+}
